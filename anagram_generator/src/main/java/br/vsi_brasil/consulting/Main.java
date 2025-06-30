@@ -74,24 +74,16 @@ public class Main {
         //Add anagram at last element add it to the result list
         if (currentIndex == letters.length - 1) {
             result.add(new String(letters));
-            System.out.println("inner result");
-            System.out.println(result);
             return;
         }
 
         //Iterate each element position and interchange the current element with the next one
         for (int i = currentIndex; i < letters.length; i++) {
             swap(letters, currentIndex, i);
-            System.out.println("Inter one: ");
-            System.out.println(letters);
             recursiveAnagramGenerator(letters, currentIndex + 1, result);
             swap(letters, currentIndex, i); // backtrack
-            System.out.println("Inter two: ");
-            System.out.println(letters);
-            String aaa = "";
         }
 
-        String aaa = "";
     }
 
     /**
@@ -104,7 +96,6 @@ public class Main {
         char temp = array[i];
         array[i] = array[j];
         array[j] = temp;
-        String aaa = "";
     }
 
 }
